@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://somethingg.co"),
   title: "Somethingg | IT Consultancy & Digital Services",
   description:
     "Somethingg provides modern IT consulting, digital solutions, product development, and business support services through a human, practical, and results-focused approach.",
@@ -27,6 +28,8 @@ export const metadata: Metadata = {
     title: "Somethingg | IT Consultancy & Digital Services",
     description:
       "Somethingg provides modern IT consulting, digital solutions, product development, and business support services through a human, practical, and results-focused approach.",
+    url: "https://somethingg.co",
+    siteName: "Somethingg",
     type: "website",
     locale: "en_IN",
   },

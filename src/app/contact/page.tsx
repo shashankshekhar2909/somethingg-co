@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 const contactDetails = [
   {
     label: "Email",
-    value: "hello@somethingg.in",
-    href: "mailto:hello@somethingg.in",
+    value: "hello@somethingg.co",
+    href: "mailto:hello@somethingg.co",
     description: "We respond within 1–2 business days.",
     icon: (
       <svg
@@ -166,7 +166,7 @@ export default function ContactPage() {
                   requirements together — no slides, no pitch, just a useful
                   conversation.
                 </p>
-                <Button href="mailto:hello@somethingg.in" variant="primary" size="sm" external>
+                <Button href="mailto:hello@somethingg.co" variant="primary" size="sm" external>
                   Book a Consultation
                 </Button>
               </div>
