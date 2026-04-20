@@ -79,13 +79,30 @@ export default function HeroScene() {
     particleGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     particleGeo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
+    // Build a circular disc texture so particles render as circles, not squares.
+    const discCanvas = document.createElement("canvas");
+    discCanvas.width = 64;
+    discCanvas.height = 64;
+    const ctx = discCanvas.getContext("2d")!;
+    const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gradient.addColorStop(0, "rgba(255,255,255,1)");
+    gradient.addColorStop(0.45, "rgba(255,255,255,0.85)");
+    gradient.addColorStop(1, "rgba(255,255,255,0)");
+    ctx.fillStyle = gradient;
+    ctx.beginPath();
+    ctx.arc(32, 32, 32, 0, Math.PI * 2);
+    ctx.fill();
+    const discTexture = new THREE.CanvasTexture(discCanvas);
+
     const particleMat = new THREE.PointsMaterial({
-      size: 0.6,
+      size: 1.2,
+      map: discTexture,
       vertexColors: true,
       transparent: true,
       opacity: 0.75,
       sizeAttenuation: true,
       depthWrite: false,
+      alphaTest: 0.01,
     });
 
     const particles = new THREE.Points(particleGeo, particleMat);
@@ -253,6 +270,7 @@ export default function HeroScene() {
       // Dispose Three.js objects
       particleGeo.dispose();
       particleMat.dispose();
+      discTexture.dispose();
       lineGeo.dispose();
       lineMaterial.dispose();
       icoGeo.dispose();
