@@ -5,9 +5,21 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceIcon from "@/components/ServiceIcon";
 
 export const metadata: Metadata = {
-  title: "Services | Somethingg Technology",
+  title: "Services",
   description:
     "Explore Somethingg's full range of services: IT consulting, web & product development, technical support, content & communication, and custom business solutions.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Services | Somethingg",
+    description:
+      "Explore Somethingg's full range of services: IT consulting, web & product development, technical support, content & communication, and custom business solutions.",
+    url: "https://somethingg.co/services",
+    siteName: "Somethingg",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 export default function ServicesPage() {

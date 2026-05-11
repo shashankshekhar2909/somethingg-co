@@ -3,9 +3,21 @@ import ContactForm from "@/components/ContactForm";
 import Button from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Contact | Somethingg Technology",
+  title: "Contact",
   description:
     "Reach out to Somethingg Technology. Have a project, requirement, or idea? Let's talk about how we can help.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact | Somethingg",
+    description:
+      "Reach out to Somethingg. Have a project, requirement, or idea? Let's talk about how we can help.",
+    url: "https://somethingg.co/contact",
+    siteName: "Somethingg",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 const contactDetails = [

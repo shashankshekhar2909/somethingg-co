@@ -8,9 +8,21 @@ import ServiceIcon from "@/components/ServiceIcon";
 import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
-  title: "Somethingg | IT Consultancy & Digital Services",
+  title: "IT Consultancy & Digital Services",
   description:
     "Somethingg provides modern IT consulting, digital solutions, product development, and business support services through a human, practical, and results-focused approach.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Somethingg | IT Consultancy & Digital Services",
+    description:
+      "Somethingg provides modern IT consulting, digital solutions, product development, and business support services through a human, practical, and results-focused approach.",
+    url: "https://somethingg.co",
+    siteName: "Somethingg",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 const trustStatements = [

@@ -13,9 +13,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://somethingg.co"),
-  title: "Somethingg | IT Consultancy & Digital Services",
+  title: {
+    default: "Somethingg | IT Consultancy & Digital Services",
+    template: "%s | Somethingg",
+  },
   description:
     "Somethingg provides modern IT consulting, digital solutions, product development, and business support services through a human, practical, and results-focused approach.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "IT consultancy",
     "digital services",
@@ -24,6 +30,23 @@ export const metadata: Metadata = {
     "technology consulting",
     "Somethingg Technology",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Somethingg | IT Consultancy & Digital Services",
+    description:
+      "Somethingg provides modern IT consulting, digital solutions, product development, and business support services.",
+  },
   openGraph: {
     title: "Somethingg | IT Consultancy & Digital Services",
     description:
@@ -40,9 +63,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Somethingg",
+    url: "https://somethingg.co",
+    email: "hello@somethingg.co",
+    areaServed: "Worldwide",
+    sameAs: [],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Somethingg",
+    url: "https://somethingg.co",
+    inLanguage: "en",
+    publisher: {
+      "@type": "Organization",
+      name: "Somethingg",
+    },
+  };
+
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <body className="min-h-screen flex flex-col bg-[#0F0F14] text-white antialiased font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

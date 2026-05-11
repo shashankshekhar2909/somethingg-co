@@ -4,9 +4,21 @@ import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Team | Somethingg Technology",
+  title: "Team",
   description:
     "Meet the team behind Somethingg — Sarvesh, Chanchal, and Sugandh. A small, senior, cross-functional team built for real results.",
+  alternates: {
+    canonical: "/team",
+  },
+  openGraph: {
+    title: "Team | Somethingg",
+    description:
+      "Meet the team behind Somethingg — a small, senior, cross-functional team built for real results.",
+    url: "https://somethingg.co/team",
+    siteName: "Somethingg",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 export default function TeamPage() {

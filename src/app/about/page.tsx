@@ -3,9 +3,21 @@ import Button from "@/components/Button";
 import SectionHeading from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "About | Somethingg Technology",
+  title: "About",
   description:
     "Learn about Somethingg — a practical, modern, human-centered IT consultancy built to help growing businesses navigate technology, communication, and execution.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Somethingg",
+    description:
+      "Learn about Somethingg — a practical, modern, human-centered IT consultancy for growing businesses.",
+    url: "https://somethingg.co/about",
+    siteName: "Somethingg",
+    type: "website",
+    locale: "en_IN",
+  },
 };
 
 const whatWeArePoints = [
