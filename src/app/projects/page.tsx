@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Explore selected Somethingg projects across education and commerce, including school.somethingg.co and shop.somethingg.co.",
+    "Explore selected Somethingg projects across education, commerce, and mentorship platforms, including school.somethingg.co, shop.somethingg.co, and mentor.somethingg.co.",
   alternates: {
     canonical: "/projects",
   },
@@ -42,6 +42,18 @@ const projects = [
       "Collection-led browsing with featured categories and new arrivals",
       "Local conversion focus with WhatsApp enquiry flows",
       "Showroom-focused trust content including testimonials and timings",
+    ],
+  },
+  {
+    name: "MentorXAI",
+    url: "https://mentor.somethingg.co/",
+    category: "EdTech Mentorship Platform",
+    summary:
+      "A mentorship marketplace that connects students with exam mentors for competitive preparation across major Indian exams.",
+    highlights: [
+      "Exam-focused positioning for UPSC, JEE, NEET, CAT, GATE, and more",
+      "Conversion-oriented journey with mentor discovery and onboarding CTAs",
+      "Strong trust presentation with platform stats, testimonials, and outcomes",
     ],
   },
 ];
