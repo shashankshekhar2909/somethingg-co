@@ -9,18 +9,11 @@ import Button from "./Button";
 const HEADLINE = "Building Modern Digital Solutions for Growing Businesses";
 const HEADLINE_WORDS = HEADLINE.split(" ");
 
-const TRUST_PILLS = [
-  "Trusted by Founders",
-  "Modern Execution",
-  "Human Approach",
-];
-
 export default function Hero() {
   const eyebrowRef = useRef<HTMLDivElement>(null);
   const wordsRef = useRef<HTMLSpanElement[]>([]);
   const sublineRef = useRef<HTMLParagraphElement>(null);
   const ctasRef = useRef<HTMLDivElement>(null);
-  const pillsRef = useRef<HTMLDivElement>(null);
 
   // Collect word span refs
   const setWordRef = (el: HTMLSpanElement | null, index: number) => {
@@ -78,21 +71,6 @@ export default function Hero() {
       }
     }
 
-    // Trust pills — staggered fade from bottom
-    if (pillsRef.current) {
-      const pills = Array.from(
-        pillsRef.current.querySelectorAll<HTMLElement>(".trust-pill")
-      );
-      if (pills.length > 0) {
-        animate(pills, {
-          opacity: [0, 1],
-          translateY: [16, 0],
-          duration: 500,
-          delay: stagger(100, { start: 1200 }),
-          easing: "easeOutExpo",
-        });
-      }
-    }
   }, []);
 
   return (
@@ -189,7 +167,7 @@ export default function Hero() {
         {/* CTA buttons */}
         <div
           ref={ctasRef}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button
             href="/contact"
@@ -221,26 +199,6 @@ export default function Hero() {
           >
             Explore Services
           </Button>
-        </div>
-
-        {/* Trust pills */}
-        <div
-          ref={pillsRef}
-          className="flex flex-wrap items-center justify-center gap-3"
-        >
-          {TRUST_PILLS.map((pill) => (
-            <span
-              key={pill}
-              className="trust-pill inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-gray-400 border border-white/10 bg-white/[0.03]"
-              style={{ opacity: 0 }}
-            >
-              <span
-                className="h-1 w-1 rounded-full bg-blue-500/60"
-                aria-hidden="true"
-              />
-              {pill}
-            </span>
-          ))}
         </div>
       </div>
     </section>

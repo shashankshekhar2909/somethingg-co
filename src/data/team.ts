@@ -42,4 +42,15 @@ export const teamMembers: TeamMember[] = [
     fullBio:
       "Sugandh is the operational backbone of Somethingg. She ensures that every engagement runs smoothly — from onboarding to delivery — and that clients always feel informed, heard, and supported. With a strong grasp of strategy and a detail-oriented mindset, Sugandh bridges the gap between planning and execution. She coordinates across the team, manages timelines, and keeps client goals front and center throughout every project. Her approach is calm, structured, and deeply client-first.",
   },
+  {
+    id: "anupam",
+    name: "Anupam Shukla",
+    role: "Business Development",
+    initials: "AS",
+    accentColor: "#F59E0B",
+    shortBio:
+      "Drives client growth and new business partnerships. Connects the right opportunities with the right solutions across industries.",
+    fullBio:
+      "Anupam leads business development at Somethingg. He works closely with prospective clients to understand their needs, qualify the right opportunities, and translate them into engagements that deliver real value. With a sharp commercial instinct and a relationship-first approach, Anupam ensures every conversation starts with listening — not pitching. He bridges the gap between client expectations and what Somethingg can deliver, building partnerships that last beyond the first project.",
+  },
 ];

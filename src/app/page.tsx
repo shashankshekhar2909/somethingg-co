@@ -75,25 +75,26 @@ const differentiators = [
   },
 ];
 
+const SECTION = "py-24 md:py-32 border-t border-white/[0.06]";
+const CONTAINER = "max-w-6xl mx-auto px-6 lg:px-8";
+const CARD =
+  "p-6 rounded-lg bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.12] transition-colors duration-200";
+
 export default function HomePage() {
   return (
-    <>
-      {/* Hero Section — animated Three.js + Anime.js hero */}
+    <div className="bg-[#0A0A12]">
       <Hero />
 
-      {/* Trust Strip */}
-      <section className="bg-[#0C0C12] border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Trust Strip — hairline divider, no bg shift */}
+      <section className="border-t border-white/[0.06]">
+        <div className={`${CONTAINER} py-14`}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
             {trustStatements.map((item) => (
-              <div key={item.label} className="flex flex-col gap-2">
-                <div className="flex items-center gap-2">
-                  <span className="h-px w-6 bg-blue-500" />
-                  <span className="text-xs font-semibold text-blue-400 uppercase tracking-widest">
-                    {item.label}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-500 leading-relaxed">
+              <div key={item.label}>
+                <p className="text-[11px] font-semibold text-blue-400 uppercase tracking-[0.18em] mb-2">
+                  {item.label}
+                </p>
+                <p className="text-sm text-gray-400 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -102,50 +103,35 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-20 md:py-28 bg-[#0F0F14]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Services */}
+      <section className={SECTION}>
+        <div className={CONTAINER}>
           <SectionHeading
             eyebrow="What We Do"
-            title="Services Built Around Your Business"
+            title="Services built around your business"
             description="From strategy to execution, we cover the full spectrum of what modern businesses need to grow and operate effectively."
-            className="mb-14"
+            className="mb-16"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service) => (
               <Link
                 key={service.id}
                 href={`/services#${service.id}`}
-                className="group relative p-6 rounded-xl bg-[#1A1A24] border border-white/5 hover:border-blue-600/30 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600/5"
+                className={`group relative ${CARD}`}
               >
-                <div className="w-11 h-11 rounded-lg bg-blue-600/10 border border-blue-600/20 flex items-center justify-center mb-5 group-hover:bg-blue-600/15 transition-colors duration-300">
+                <div className="w-10 h-10 rounded-md bg-blue-600/10 border border-blue-600/20 flex items-center justify-center mb-5">
                   <ServiceIcon icon={service.icon} className="text-blue-400" />
                 </div>
-                <h3 className="text-base font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors duration-200">
+                <h3 className="text-[15px] font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors duration-200">
                   {service.title}
                 </h3>
                 <p className="text-sm text-gray-500 leading-relaxed">
                   {service.shortDescription}
                 </p>
-                <div className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <svg
-                    className="h-4 w-4 text-blue-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                    />
-                  </svg>
-                </div>
               </Link>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="mt-12 flex justify-center">
             <Button href="/services" variant="outline">
               View All Services
             </Button>
@@ -153,71 +139,65 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Somethingg */}
-      <section className="py-20 md:py-28 bg-[#0C0C12]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
+      {/* Why Somethingg */}
+      <section className={SECTION}>
+        <div className={CONTAINER}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-20 items-start">
+            <div className="lg:sticky lg:top-28">
               <SectionHeading
                 eyebrow="Why Somethingg"
-                title="Different by Design"
+                title="Different by design"
                 description="We built Somethingg to be the kind of technology partner we'd want ourselves — practical, transparent, and genuinely invested in your outcomes."
                 align="left"
               />
             </div>
-            <div className="space-y-4">
+            <ul className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
               {differentiators.map((item, i) => (
-                <div
-                  key={item.title}
-                  className="flex gap-4 p-5 rounded-xl bg-[#1A1A24] border border-white/5 hover:border-white/10 transition-colors duration-200"
-                >
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-600/15 border border-blue-600/25 flex items-center justify-center text-xs font-bold text-blue-400">
+                <li key={item.title} className="flex gap-5 py-6">
+                  <span className="flex-shrink-0 text-xs font-mono text-blue-400/70 pt-0.5">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
-                    <h3 className="text-sm font-semibold text-white mb-1">
+                    <h3 className="text-[15px] font-semibold text-white mb-1.5">
                       {item.title}
                     </h3>
                     <p className="text-sm text-gray-500 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Team Preview */}
-      <section className="py-20 md:py-28 bg-[#0F0F14]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Team */}
+      <section className={SECTION}>
+        <div className={CONTAINER}>
           <SectionHeading
             eyebrow="The Team"
-            title="People Behind the Work"
+            title="People behind the work"
             description="A small, senior, cross-functional team that brings technology, communication, and operations expertise together."
-            className="mb-14"
+            className="mb-16"
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {teamMembers.map((member) => (
-              <div
-                key={member.id}
-                className="p-7 rounded-xl bg-[#1A1A24] border border-white/5 hover:border-white/10 hover:-translate-y-1 transition-all duration-300"
-              >
+              <div key={member.id} className={CARD}>
                 <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg mb-5 border"
+                  className="w-12 h-12 rounded-full flex items-center justify-center font-semibold text-base mb-5 border"
                   style={{
-                    backgroundColor: `${member.accentColor}22`,
+                    backgroundColor: `${member.accentColor}1A`,
                     color: member.accentColor,
                     borderColor: `${member.accentColor}33`,
                   }}
                 >
                   {member.initials}
                 </div>
-                <h3 className="text-base font-semibold text-white">
+                <h3 className="text-[15px] font-semibold text-white">
                   {member.name}
                 </h3>
-                <p className="text-xs text-blue-400 font-medium mt-0.5 mb-3">
+                <p className="text-xs text-blue-400/90 font-medium mt-1 mb-3">
                   {member.role}
                 </p>
                 <p className="text-sm text-gray-500 leading-relaxed">
@@ -226,7 +206,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="mt-12 flex justify-center">
             <Button href="/team" variant="outline">
               Meet the Full Team
             </Button>
@@ -235,37 +215,29 @@ export default function HomePage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 md:py-28 bg-[#0C0C12]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative p-10 md:p-14 rounded-2xl bg-gradient-to-br from-[#1A1A2E] to-[#1A1A24] border border-blue-600/15 overflow-hidden">
-            {/* Decorative top line */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
-            {/* Glow */}
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-blue-600/5 blur-3xl pointer-events-none" />
-
-            <div className="relative z-10">
-              <p className="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-4">
-                Get Started
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-5">
-                Let&apos;s discuss your requirements
-              </h2>
-              <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-                Tell us what you need, and we&apos;ll help you plan the right solution
-                — no commitment required, just a straightforward conversation.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button href="/contact" size="lg" variant="primary">
-                  Get in Touch
-                </Button>
-                <Button href="/about" size="lg" variant="ghost">
-                  Learn About Us
-                </Button>
-              </div>
-            </div>
+      <section className={SECTION}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+          <p className="text-[11px] font-semibold text-blue-400 uppercase tracking-[0.18em] mb-5">
+            Get Started
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-5">
+            Let&apos;s discuss your requirements
+          </h2>
+          <p className="text-gray-400 text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            Tell us what you need, and we&apos;ll help you plan the right
+            solution — no commitment required, just a straightforward
+            conversation.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Button href="/contact" size="lg" variant="primary">
+              Get in Touch
+            </Button>
+            <Button href="/about" size="lg" variant="ghost">
+              Learn About Us
+            </Button>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
