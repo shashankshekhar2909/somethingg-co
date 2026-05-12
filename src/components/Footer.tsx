@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
@@ -17,12 +18,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="inline-block group">
-              <span className="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors duration-200">
-                Somethingg
-              </span>
-              <span className="block text-xs font-medium text-gray-600 tracking-widest uppercase mt-0.5">
-                Technology
-              </span>
+              <Image
+                src="/somethingg-logo-dark.svg"
+                alt="Somethingg"
+                width={220}
+                height={46}
+                className="h-[60px] w-auto"
+              />
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
               Practical, modern, human-centered IT consulting and digital services for growing businesses.

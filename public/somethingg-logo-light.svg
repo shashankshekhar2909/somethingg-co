@@ -1,0 +1,10 @@
+<svg width="560" height="220" viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .word { font-family: 'Roboto', sans-serif; font-weight: 900; }
+    .sub  { font-family: 'Roboto', sans-serif; font-weight: 400; letter-spacing: 4px; font-size: 11px; }
+  </style>
+  <rect width="560" height="220" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="280" y="128" class="word" font-size="68" fill="#0A0F1E" text-anchor="middle" letter-spacing="-1">Somethin<tspan fill="#2563EB">g</tspan><tspan fill="#60A5FA">g</tspan></text>
+  <rect x="407" y="138" width="68" height="3" rx="1.5" fill="#2563EB"/>
+  <text x="280" y="180" class="sub" fill="#6B7FA8" text-anchor="middle">TECHNOLOGY &amp; DIGITAL SERVICES</text>
+</svg>

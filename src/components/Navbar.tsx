@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -45,12 +46,14 @@ export default function Navbar() {
             className="flex items-center gap-2 group"
             aria-label="Somethingg Technology — Home"
           >
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-blue-400 transition-colors duration-200">
-              Somethingg
-            </span>
-            <span className="hidden sm:inline-block text-xs font-medium text-gray-500 tracking-widest uppercase mt-0.5">
-              Technology
-            </span>
+            <Image
+              src="/somethingg-logo-dark.svg"
+              alt="Somethingg"
+              width={220}
+              height={46}
+              className="h-[60px] w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

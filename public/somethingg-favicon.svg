@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .word { font-family: 'Roboto', sans-serif; font-weight: 900; }
+  </style>
+  <rect width="64" height="64" rx="12" fill="#0A0F1E"/>
+  <text x="32" y="46" class="word" font-size="36" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2"><tspan fill="#2563EB">g</tspan><tspan fill="#60A5FA">g</tspan></text>
+</svg>

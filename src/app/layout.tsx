@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/somethingg-favicon.svg",
+    shortcut: "/somethingg-favicon.svg",
+    apple: "/somethingg-favicon.svg",
+  },
   keywords: [
     "IT consultancy",
     "digital services",
